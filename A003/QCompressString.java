@@ -11,15 +11,15 @@ public class QCompressString {
 	public static int compress(String s) {
 		 
 		int div = (s.split("").length/2); // 4
-		int same = 0; //중복이 제거되고 같을떄 +1
-		int count = 0; //중복이 단어별로 제거된 수 -> return 최종 length + count 
-		int result = 1001; //최대값
+		int result = 999999; //최대값
 
 		while(div > 0) {
 
 			ArrayList<String> list = getStringArray(s, div); //devide에 따른 string값 배열로 가져오기.
-			// for(int i = 0; i<list.size(); i++) {
 			int i = 0;
+			int same = 0; //중복이 제거되고 같을떄 +1
+			int count = 0; //중복이 단어별로 제거된 수 -> return 최종 length + count 
+
 			while(true){
 				if(list.size()-1 == i) break;
 
@@ -41,19 +41,10 @@ public class QCompressString {
 				same = 0;
 			}
 			int tempResult = sb.toString().length() + count;
-			System.out.println("tempResult");
-			System.out.println(tempResult);
 			result = Math.min(tempResult, result);
-			
-			StringBuffer sb2 = new StringBuffer();
-			for(String temp : list) {
-				sb2.append(temp).append(" ");
-			}
-			System.out.println(sb2.toString());
-
 			div = div - 1;
 		}
-
+		
 
 		return result;
 	}
@@ -88,7 +79,7 @@ public class QCompressString {
 	}
 
 	public static void main(String[]args) {
-		String input = "ababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdabababcdcdab"; //길이 : 8
+		String input = "abcabcabcabcdededededede"; //길이 : 8
 
 		int result = compress(input);
 
