@@ -11,24 +11,34 @@ public class QCompressString {
 	public static int compress(String s) {
 		 
 		int div = (s.split("").length/2); // 4
+		if(div == 0) return 1;
 		int result = 999999; //최대값
 
 		while(div > 0) {
 
 			ArrayList<String> list = getStringArray(s, div); //devide에 따른 string값 배열로 가져오기.
 			int i = 0;
-			int same = 0; //중복이 제거되고 같을떄 +1
+			int same = 1; //중복이 제거되고 같을떄 +1
 			int count = 0; //중복이 단어별로 제거된 수 -> return 최종 length + count 
 
 			while(true){
 				if(list.size()-1 == i) break;
 
-				if(list.get(i).equals(list.get(i+1)) || list.get(i) == list.get(i+1)) {
+				if(list.get(i).equals(list.get(i+1))) {
 					list.remove(i);
 					same = same + 1;
 				} else {
-					if(same > 0) count++;
-					same = 0;
+					System.out.println(same);
+					if(same > 1) {
+						count = count + 1;
+						if(same > 9 ) {
+							count = count + 1;
+							if(same > 99) {
+								count = count + 1;
+							}
+						}
+					}
+					same = 1;
 					i++;
 				}
 			}
@@ -36,10 +46,17 @@ public class QCompressString {
 			for(String temp : list) {
 				sb.append(temp);
 			}
-			if(same > 0) {
+			if(same > 1) {
 				count++;
-				same = 0;
+				if(same > 9 ) {
+					count = count + 1;
+					if(same > 99) {
+						count = count + 1;
+					}
+				}
+				same = 1;
 			}
+			
 			int tempResult = sb.toString().length() + count;
 			result = Math.min(tempResult, result);
 			div = div - 1;
@@ -79,7 +96,7 @@ public class QCompressString {
 	}
 
 	public static void main(String[]args) {
-		String input = "abcabcabcabcdededededede"; //길이 : 8
+		String input = "aaaaaaaaaabbbbbbbbbb"; //길이 : 8
 
 		int result = compress(input);
 
