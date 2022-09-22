@@ -69,7 +69,7 @@ public class QCompressString {
 	public static ArrayList<String> getStringArray(String s, int devide) {
 		
 		ArrayList<String> list = new ArrayList<>();
-		
+		StringBuilder sb = new StringBuilder();
 		int totalLength = s.split("").length;
 		int i = 0;
 		String init = s.substring(i, devide);
@@ -84,13 +84,15 @@ public class QCompressString {
 			if(devide > totalLength) {
 				if(totalLength%initDiv>0) {
 					//나머지 값이 있으면
+					sb.append(s.substring(totalLength-(totalLength%initDiv)));
 					list.add(s.substring(totalLength-(totalLength%initDiv)));
 				}
 				break;
 			}
-			
+			sb.append(s.substring(i, devide));
 			list.add(s.substring(i, devide));	
 		}
+		
 		
 		return list;
 	}
