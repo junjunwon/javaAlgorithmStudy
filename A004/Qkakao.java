@@ -52,9 +52,13 @@ public class Qkakao {
 			sb.append(calc(v));
 			sb.append(")");
 			StringBuffer reverse = new StringBuffer();
-			for(int i = u.length()-2; i > 0; i--) {
-				reverse.append(u.charAt(i));
+			for(int i = 1; i < u.length()-1; i++) {
+				if(u.charAt(i) == '(') reverse.append(")");
+				else if(u.charAt(i) == ')') reverse.append("(");
 			}
+			// for(int i = u.length()-2; i > 0; i--) {
+			// 	reverse.append(u.charAt(i));
+			// }
 			sb.append(reverse.toString());
 		}
 		return sb.toString();
