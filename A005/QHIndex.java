@@ -24,6 +24,17 @@ public class QHIndex {
     public static void main(String[]args){
 //        int answer = solution(new int[]{3, 0, 6, 1, 5});
         int answer = solution(new int[]{6,5,5,5,3,2,1,0});
+        int[][] a = {
+                {6,1},
+                {5,2},
+                {},
+                {6,1},
+                {6,1},
+                {6,1},
+                {6,1},
+
+        };
+
         System.out.println(answer);
     }
 }

@@ -1,0 +1,84 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "java",
+			"name": "Launch Current File",
+			"request": "launch",
+			"mainClass": "${file}"
+		},
+		{
+			"type": "java",
+			"name": "Launch Q18108",
+			"request": "launch",
+			"mainClass": "A001.Q18108",
+			"projectName": "javaAlgorithmStudy_cdeaa150"
+		},
+		{
+			"type": "java",
+			"name": "Launch Q2557",
+			"request": "launch",
+			"mainClass": "A001.Q2557",
+			"projectName": "javaAlgorithmStudy_cdeaa150"
+		},
+		{
+			"type": "java",
+			"name": "Launch Q2178",
+			"request": "launch",
+			"mainClass": "A002.Q2178",
+			"projectName": "javaAlgorithmStudy_cdeaa150"
+		},
+		{
+			"type": "java",
+			"name": "Launch Q1152",
+			"request": "launch",
+			"mainClass": "A003.Q1152",
+			"projectName": "javaAlgorithmStudy_cdeaa150"
+		},
+		{
+			"type": "java",
+			"name": "Launch Q2525",
+			"request": "launch",
+			"mainClass": "A003.Q2525",
+			"projectName": "javaAlgorithmStudy_cdeaa150"
+		},
+		{
+			"type": "java",
+			"name": "Launch QCompressNew",
+			"request": "launch",
+			"mainClass": "A003.QCompressNew",
+			"projectName": "javaAlgorithmStudy_cdeaa150"
+		},
+		{
+			"type": "java",
+			"name": "Launch QCompressString",
+			"request": "launch",
+			"mainClass": "A003.QCompressString",
+			"projectName": "javaAlgorithmStudy_cdeaa150"
+		},
+		{
+			"type": "java",
+			"name": "Launch Q2941",
+			"request": "launch",
+			"mainClass": "A004.Q2941",
+			"projectName": "javaAlgorithmStudy_cdeaa150"
+		},
+		{
+			"type": "java",
+			"name": "Launch Qkakao",
+			"request": "launch",
+			"mainClass": "A004.Qkakao",
+			"projectName": "javaAlgorithmStudy_cdeaa150"
+		},
+		{
+			"type": "java",
+			"name": "Launch QMockTest",
+			"request": "launch",
+			"mainClass": "A005.QMockTest",
+			"projectName": "javaAlgorithmStudy_cdeaa150"
+		}
+	]
+}
